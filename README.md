@@ -1,35 +1,32 @@
-# HabitTrackingApp
+# 📅 Habit Tracker App
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple habit tracking web application built with **Vue 3** and **TailwindCSS**. This app helps you build and maintain daily habits by tracking progress over time.
 
-## Recommended IDE Setup
+## 🚀 Features
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- ✅ Add, edit, stop, and delete habits
+- 📆 Track habits day by day
+- 🔄 Navigate between days
+- 💾 Progress saved in LocalStorage
+- 🌙 Clean, responsive UI with TailwindCSS
 
-## Customize configuration
+## 🧠 How It Works
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+- Each habit is stored in a global habit list (`habit-names`)
+- Daily completions are stored per-date (`habits-YYYY-MM-DD`)
+- You can edit the same habit or add new habits
+- You can also stop a habit (hide it from future days) or delete it entirely
 
-## Project Setup
+## 📦 Project Setup
 
-```sh
+```bash
+# Clone the repo
+git clone https://github.com/def217/habit-tracker-app.git
+cd habit-tracker-app
+
+# Install dependencies
 npm install
-```
 
-### Compile and Hot-Reload for Development
-
-```sh
+# Run the development server
 npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
 ```
