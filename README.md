@@ -21,7 +21,7 @@ A simple habit tracking web application built with **Vue 3** and **TailwindCSS**
 
 ```bash
 # Clone the repo
-git clone https://github.com/def217/habit-tracker-app.git
+git clone https://github.com/def217/HabitTrackingApp
 cd habit-tracker-app
 
 # Install dependencies
