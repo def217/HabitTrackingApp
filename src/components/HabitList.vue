@@ -40,6 +40,7 @@
             class="w-5 h-5 accent-blue-500"
             :checked="isCompleted(habit)"
             @change="toggleHabit(habit)"
+            :disabled="isFutureDate"
           />
 
           <div class="flex gap-2 text-sm">
@@ -178,6 +179,11 @@ const activeHabits = computed(() => {
     const stopDate = localStorage.getItem(`stop-date-${habit}`)
     return !stopDate || today < stopDate
   })
+})
+
+const isFutureDate = computed(() => {
+  const today = new Date().toISOString().slice(0, 10)
+  return props.date > today
 })
 
 watch(

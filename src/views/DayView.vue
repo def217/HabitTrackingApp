@@ -18,13 +18,15 @@
 
       <button
         @click="goToDate(getDate(1))"
-        class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition"
+        :disabled="isNextDateInFuture"
+        :title="isNextDateInFuture ? 'You cannot mark habits for future dates' : ''"
+        class="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700 transition disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        Next Day
         <ArrowRight />
+        Next Day
       </button>
     </div>
-    
+
     <HabitList :date="date" />
   </div>
 </template>
@@ -49,6 +51,15 @@ function getDate(offset) {
 function goToDate(targetDate) {
   router.push(`/day/${targetDate}`)
 }
+
+const isNextDateInFuture = computed(() => {
+  const next = new Date(getDate(1))
+  const today = new Date()
+
+  next.setHours(0, 0, 0, 0)
+  today.setHours(0, 0, 0, 0)
+  return next > today
+})
 </script>
 
 <style scoped>
